@@ -1,0 +1,71 @@
+﻿{
+	"toJSON": true,
+	"extraProperties": {
+		"version": "1",
+		"classes": {
+			"ListHTML": {
+				"panelColor": "#B8CCE4",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 25,
+						"Y": 20
+					}
+				}
+			}
+		},
+		"model": {
+			"workspaceLeft": 0,
+			"workspaceTop": 0
+		}
+	},
+	"dataClasses": [
+		{
+			"name": "ListHTML",
+			"className": "ListHTML",
+			"collectionName": "ListHTMLCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "v6source",
+					"kind": "storage",
+					"scope": "public",
+					"not_null": true,
+					"type": "string",
+					"multiLine": true
+				},
+				{
+					"name": "v7source",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string",
+					"multiLine": true
+				}
+			],
+			"methods": [
+				{
+					"name": "convertHTML",
+					"applyTo": "dataClass",
+					"scope": "public",
+					"from": "guidedModel.ListHTML.methods.convertHTML"
+				},
+				{
+					"name": "loadTestdata",
+					"applyTo": "dataClass",
+					"from": "guidedModel.ListHTML.methods.loadTestdata",
+					"scope": "public"
+				}
+			]
+		}
+	]
+}

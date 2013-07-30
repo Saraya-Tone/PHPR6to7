@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<HTML {$html_attrs}>
+  <HEAD>
+    <META content="IE=Edge" http-equiv="X-UA-Compatible">
+    <TITLE>
+      {$pagetitle}
+    </TITLE>
+    <META content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <LINK rel="stylesheet" type="text/css" href="styles/default.css">
+    {BEGIN rtlCSS}
+      <LINK rel="stylesheet" type="text/css" href="styles/defaultRTL.css">
+    {END rtlCSS}
+    {BEGIN styleCSSFiles}
+      <LINK rel="stylesheet" type="text/css" href="{$stylepath}">
+    {END styleCSSFiles}
+    {BEGIN pageCSSFiles}
+      <LINK rel="stylesheet" type="text/css" href="{$pagestylepath}">
+    {END pageCSSFiles}
+    <META name="GENERATOR" content="MSHTML 9.00.8112.16496">
+  </HEAD>
+  <BODY class="{$stylename}" {$bodyattrs}>
+    {BEGIN body}
+      {$header}
+      <DIV class="rnr-page">
+        <DIV class="rnr-top {$blockclass_top}">
+          {BEGIN container_toplinks}
+            <DIV class="rnr-c rnr-ch rnr-c-toplinks">
+              {BEGIN asearch_link}
+                <DIV class="style1 rnr-bl rnr-b-toplinks_advsearch" {$brickclass_toplinks_advsearch}>
+                  <A class="rnr-button" href="TT10M24AA2TT_search.php" {$advsearchlink_attrs}>
+                    詳細検索
+                  </A>
+                </DIV>
+              {END asearch_link}
+              {BEGIN export_link}
+                <DIV class="style1 rnr-bl rnr-b-toplinks_export" {$brickclass_toplinks_export}>
+                  <A class="rnr-button" href="TT10M24AA2TT_export.php" target="_blank" {$exportlink_attrs}>
+                    結果のエクスポート
+                  </A>
+                </DIV>
+              {END export_link}
+              <DIV class="rnr-hfiller">
+              </DIV>
+            </DIV>
+            {BEGIN container_search}
+              <DIV class="rnr-c rnr-ch rnr-c-search">
+                {BEGIN searchform_block}
+                  <DIV class="style1 rnr-bl rnr-b-search" {$brickclass_search}>
+                    <SPAN>
+                      <FONT 
+color="#ffffff" size="2"><STRONG>◇　得意先別 担当者別　売上実績　◇</STRONG></FONT>
+                      {BEGIN searchform_clear_search}
+                        <A class="rnr-button" href="#" {$clearSearchCont_attrs} {$clear_searchbutton_attrs}>
+                          リセット
+                        </A>
+                      {END searchform_clear_search}
+                      　{$event TT10M24AA2TT_snippet}
+                    </SPAN>
+                  </DIV>
+                {END searchform_block}
+                {BEGIN searchformbuttons_block}
+                  <DIV class="style1 rnr-bl rnr-b-search_buttons" {$brickclass_search_buttons}>
+                    {BEGIN searchPanelTopButtons}
+                      <SPAN>
+                        <A id="showSrchWin{$id}" class="rnr-button img" href="#" {$showHideSearchWin_attrs}>
+                          <IMG src="images/search/showWindowPin.gif">
+                        </A>
+                        <A id="showOptPanel{$id}" class="rnr-button img" href="#" {$showHideSearchPanel_attrs}>
+                          <IMG src="images/search/showOptions.gif">
+                        </A>
+                      </SPAN>
+                    {END searchPanelTopButtons}
+                  </DIV>
+                {END searchformbuttons_block}
+                {BEGIN searchsaving_block}
+                  <DIV class="style1 rnr-bl rnr-b-search_saving_buttons" {$brickclass_search_saving_buttons}>
+                  </DIV>
+                {END searchsaving_block}
+                <DIV class="rnr-hfiller">
+                </DIV>
+                {BEGIN details_block}
+                  <DIV class="style1 rnr-br rnr-b-details_found" {$brickclass_details_found}>
+                    <SPAN {$details_attrs}>
+                      抽出件数:
+                      <B>
+                        <SPAN class="runner-details_found_count">
+                          {$records_found}
+                        </SPAN>
+                      </B>
+                    </SPAN>
+                  </DIV>
+                {END details_block}
+                {BEGIN pages_block}
+                  <DIV class="style1 rnr-br rnr-b-page_of" {$brickclass_page_of}>
+                    <SPAN {$pages_attrs}>
+                      ページ
+                      <B>
+                        {$page}
+                      </B>
+                      /
+                      <B>
+                        {$maxpages}
+                      </B>
+                    </SPAN>
+                  </DIV>
+                {END pages_block}
+                {BEGIN recordspp_block}
+                  <DIV class="style1 rnr-br rnr-b-recsperpage" {$brickclass_recsperpage}>
+                    <SPAN id="recordspp_block{$id}" name="recordspp_block{$id}">
+                      １頁あたり表示数:&nbsp;{$recsPerPage}
+                    </SPAN>
+                  </DIV>
+                {END recordspp_block}
+              </DIV>
+            {END container_search}
+          {END container_toplinks}
+          <DIV class="rnr-middle">
+            <DIV class="rnr-left {$blockclass_left}">
+            </DIV>
+            <DIV class="rnr-center {$blockclass_center}">
+              {BEGIN container_message}
+                <DIV class="rnr-c rnr-ch rnr-c-message">
+                  {BEGIN message_block}
+                    <DIV class="style1 rnr-bc rnr-b-message" {$brickclass_message}>
+                      <DIV class="runner-message">
+                        {$message}
+                      </DIV>
+                    </DIV>
+                  {END message_block}
+                </DIV>
+              {END container_message}
+              {BEGIN container_grid}
+                {BEGIN grid_block}
+                  <TABLE class="rnr-c rnr-cont rnr-c-grid rnr-b-grid rnr-gridtable  hoverable " cellPadding="0">
+                    <THEAD>
+                      {BEGIN grid_header}
+                        <TR class="rnr-toprow style1 {$gridHeader_class}">
+                          {BEGIN record_header}
+                            {BEGIN TT10M24AA2TT_dtable_column}
+                              <TH>
+                              </TH>
+                            {END TT10M24AA2TT_dtable_column}
+                            
+                            {BEGIN NTANTCD2_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                {BEGIN NTANTCD2_fieldheader}
+                                  <A {$NTANTCD2_orderlinkattrs}>
+                                    担当者CD
+                                  </A>
+                                {END NTANTCD2_fieldheader}
+                              </TH>
+                            {END NTANTCD2_fieldheadercolumn}
+                            
+                            
+                            {BEGIN TANTONAME_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                {BEGIN TANTONAME_fieldheader}
+                                  <A {$TANTONAME_orderlinkattrs}>
+                                    担当者
+                                  </A>
+                                {END TANTONAME_fieldheader}
+                              </TH>
+                            {END TANTONAME_fieldheadercolumn}
+                            
+                            
+                            {BEGIN TOUTTA_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOUTTA_fieldheader}
+                                    <A {$TOUTTA_orderlinkattrs}>
+                                      当期　粗利計
+                                    </A>
+                                  {END TOUTTA_fieldheader}
+                                </P>
+                              <P>
+                              {BEGIN ZENTTA_fieldheader}
+                                <A {$ZENTTA_orderlinkattrs}>
+                                  前期　粗利計
+                                </A>
+                              {END ZENTTA_fieldheader}
+                              
+                              </P>
+                              <P>
+                                &nbsp;
+                              </P>    
+                              </TH>
+                            {END TOUTTA_fieldheadercolumn}
+                            
+                            
+                            
+                            {BEGIN TOURIA_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOURIA_fieldheader}
+                                    <A {$TOURIA_orderlinkattrs}>
+                                      当期累計(前月まで)
+                                    </A>
+                                  {END TOURIA_fieldheader}
+                                </P>
+                              <P>
+                              {BEGIN ZENRIA_fieldheader}
+                                <A {$ZENRIA_orderlinkattrs}>
+                                  前期累計(前月まで)
+                                </A>
+                              {END ZENRIA_fieldheader}
+
+                              </P>
+                              <P>
+                                {BEGIN SAKTTR_fieldheader}
+                                  <A {$SAKTTR_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAKTTR_fieldheader}
+                              </P>
+                                                            </TH>
+                            {END TOURIA_fieldheadercolumn}
+                            
+                            
+                            
+                            {BEGIN TOU11A_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOU11A_fieldheader}
+                                    <A {$TOU11A_orderlinkattrs}>
+                                      当期11月
+                                    </A>
+                                  {END TOU11A_fieldheader}
+                                </P>
+                              </TH>
+                              {BEGIN ZEN11A_fieldheader}
+                                <A {$ZEN11A_orderlinkattrs}>
+                                  前期11月
+                                </A>
+                              {END ZEN11A_fieldheader}
+                              <P>
+                              </P>
+                              <P>
+                                {BEGIN SAK11R_fieldheader}
+                                  <A {$SAK11R_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAK11R_fieldheader}
+                              </P>
+                            {END TOU11A_fieldheadercolumn}
+                            {BEGIN TOU12A_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOU12A_fieldheader}
+                                    <A {$TOU12A_orderlinkattrs}>
+                                      当期12月
+                                    </A>
+                                  {END TOU12A_fieldheader}
+                                </P>
+                              </TH>
+                              {BEGIN ZEN12A_fieldheader}
+                                <A {$ZEN12A_orderlinkattrs}>
+                                  前期12月
+                                </A>
+                              {END ZEN12A_fieldheader}
+                              <P>
+                              </P>
+                              <P>
+                                {BEGIN SAK12R_fieldheader}
+                                  <A {$SAK12R_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAK12R_fieldheader}
+                              </P>
+                            {END TOU12A_fieldheadercolumn}
+                            {BEGIN TOU01A_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOU01A_fieldheader}
+                                    <A {$TOU01A_orderlinkattrs}>
+                                      当期1月
+                                    </A>
+                                  {END TOU01A_fieldheader}
+                                </P>
+                              </TH>
+                              {BEGIN ZEN01A_fieldheader}
+                                <A {$ZEN01A_orderlinkattrs}>
+                                  前期1月
+                                </A>
+                              {END ZEN01A_fieldheader}
+                              <P>
+                              </P>
+                              <P>
+                                {BEGIN SAK01R_fieldheader}
+                                  <A {$SAK01R_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAK01R_fieldheader}
+                              </P>
+                            {END TOU01A_fieldheadercolumn}
+                            {BEGIN TOU02A_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOU02A_fieldheader}
+                                    <A {$TOU02A_orderlinkattrs}>
+                                      当期2月
+                                    </A>
+                                  {END TOU02A_fieldheader}
+                                </P>
+                              </TH>
+                              {BEGIN ZEN02A_fieldheader}
+                                <A {$ZEN02A_orderlinkattrs}>
+                                  前期2月
+                                </A>
+                              {END ZEN02A_fieldheader}
+                              <P>
+                              </P>
+                              <P>
+                                {BEGIN SAK02R_fieldheader}
+                                  <A {$SAK02R_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAK02R_fieldheader}
+                              </P>
+                            {END TOU02A_fieldheadercolumn}
+                            {BEGIN TOU03A_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOU03A_fieldheader}
+                                    <A {$TOU03A_orderlinkattrs}>
+                                      当期3月
+                                    </A>
+                                  {END TOU03A_fieldheader}
+                                </P>
+                              </TH>
+                              {BEGIN ZEN03A_fieldheader}
+                                <A {$ZEN03A_orderlinkattrs}>
+                                  前期3月
+                                </A>
+                              {END ZEN03A_fieldheader}
+                              <P>
+                              </P>
+                              <P>
+                                {BEGIN SAK03R_fieldheader}
+                                  <A {$SAK03R_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAK03R_fieldheader}
+                              </P>
+                            {END TOU03A_fieldheadercolumn}
+                            {BEGIN TOU04A_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOU04A_fieldheader}
+                                    <A {$TOU04A_orderlinkattrs}>
+                                      当期4月
+                                    </A>
+                                  {END TOU04A_fieldheader}
+                                </P>
+                              </TH>
+                              {BEGIN ZEN04A_fieldheader}
+                                <A {$ZEN04A_orderlinkattrs}>
+                                  前期4月
+                                </A>
+                              {END ZEN04A_fieldheader}
+                              <P>
+                              </P>
+                              <P>
+                                {BEGIN SAK04R_fieldheader}
+                                  <A {$SAK04R_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAK04R_fieldheader}
+                              </P>
+                            {END TOU04A_fieldheadercolumn}
+                            {BEGIN TOU05A_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOU05A_fieldheader}
+                                    <A {$TOU05A_orderlinkattrs}>
+                                      当期5月
+                                    </A>
+                                  {END TOU05A_fieldheader}
+                                </P>
+                              </TH>
+                              {BEGIN ZEN05A_fieldheader}
+                                <A {$ZEN05A_orderlinkattrs}>
+                                  前期5月
+                                </A>
+                              {END ZEN05A_fieldheader}
+                              <P>
+                              </P>
+                              <P>
+                                {BEGIN SAK05R_fieldheader}
+                                  <A {$SAK05R_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAK05R_fieldheader}
+                              </P>
+                            {END TOU05A_fieldheadercolumn}
+                            {BEGIN TOU06A_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOU06A_fieldheader}
+                                    <A {$TOU06A_orderlinkattrs}>
+                                      当期6月
+                                    </A>
+                                  {END TOU06A_fieldheader}
+                                </P>
+                              </TH>
+                              {BEGIN ZEN06A_fieldheader}
+                                <A {$ZEN06A_orderlinkattrs}>
+                                  前期6月
+                                </A>
+                              {END ZEN06A_fieldheader}
+                              <P>
+                              </P>
+                              <P>
+                                {BEGIN SAK06R_fieldheader}
+                                  <A {$SAK06R_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAK06R_fieldheader}
+                              </P>
+                            {END TOU06A_fieldheadercolumn}
+                            {BEGIN TOU07A_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOU07A_fieldheader}
+                                    <A {$TOU07A_orderlinkattrs}>
+                                      当期7月
+                                    </A>
+                                  {END TOU07A_fieldheader}
+                                </P>
+                              </TH>
+                              {BEGIN ZEN07A_fieldheader}
+                                <A {$ZEN07A_orderlinkattrs}>
+                                  前期7月
+                                </A>
+                              {END ZEN07A_fieldheader}
+                              <P>
+                              </P>
+                              <P>
+                                {BEGIN SAK07R_fieldheader}
+                                  <A {$SAK07R_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAK07R_fieldheader}
+                              </P>
+                            {END TOU07A_fieldheadercolumn}
+                            {BEGIN TOU08A_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOU08A_fieldheader}
+                                    <A {$TOU08A_orderlinkattrs}>
+                                      当期8月
+                                    </A>
+                                  {END TOU08A_fieldheader}
+                                </P>
+                              </TH>
+                              {BEGIN ZEN08A_fieldheader}
+                                <A {$ZEN08A_orderlinkattrs}>
+                                  前期8月
+                                </A>
+                              {END ZEN08A_fieldheader}
+                              <P>
+                              </P>
+                              <P>
+                                &nbsp;
+                                {BEGIN SAK08R_fieldheader}
+                                  <A {$SAK08R_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAK08R_fieldheader}
+                              </P>
+                            {END TOU08A_fieldheadercolumn}
+                            {BEGIN TOU09A_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOU09A_fieldheader}
+                                    <A {$TOU09A_orderlinkattrs}>
+                                      当期9月
+                                    </A>
+                                  {END TOU09A_fieldheader}
+                                </P>
+                              </TH>
+                              {BEGIN ZEN09A_fieldheader}
+                                <A {$ZEN09A_orderlinkattrs}>
+                                  前期9月
+                                </A>
+                              {END ZEN09A_fieldheader}
+                              <P>
+                              </P>
+                              <P>
+                                {BEGIN SAK09R_fieldheader}
+                                  <A {$SAK09R_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAK09R_fieldheader}
+                              </P>
+                            {END TOU09A_fieldheadercolumn}
+                            {BEGIN TOU10A_fieldheadercolumn}
+                              <TH class="rnr-gridfieldlabel">
+                                <P>
+                                  {BEGIN TOU10A_fieldheader}
+                                    <A {$TOU10A_orderlinkattrs}>
+                                      当期10月
+                                    </A>
+                                  {END TOU10A_fieldheader}
+                                </P>
+                              </TH>
+                              {BEGIN ZEN10A_fieldheader}
+                                <A {$ZEN10A_orderlinkattrs}>
+                                  前期10月
+                                </A>
+                              {END ZEN10A_fieldheader}
+                              <P>
+                              </P>
+                              <P>
+                                {BEGIN SAK10R_fieldheader}
+                                  <A {$SAK10R_orderlinkattrs}>
+                                    前年比(%)
+                                  </A>
+                                {END SAK10R_fieldheader}
+                              </P>
+                            {END TOU10A_fieldheadercolumn}
+                            <TH style="white-space: nowrap;" class="runner-cr">
+                              &nbsp;
+                            </TH>
+                            {BEGIN endrecordheader_block}
+                              <TH class="rnr-cs">
+                              </TH>
+                            {END endrecordheader_block}
+                          {END record_header}
+                        </TR>
+                      {END grid_header}
+                    </THEAD>
+                    <TBODY>
+                      {BEGIN grid_row}
+                        <TR class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+                          {BEGIN grid_record}
+                            {BEGIN TT10M24AA2TT_dtable_column}
+                              <TD class="rnr-nowrap" {$rowstyle} {$recordattrs}>
+                                {BEGIN TT01M24AA1TT_dtable_link}
+                                  <SPAN>
+                                    <A {$TT01M24AA1TT_dtablelink_attrs}>
+                                      ▼得意先
+                                    </A>
+                                    &nbsp;
+                                  </SPAN>
+                                {END TT01M24AA1TT_dtable_link}
+                              </TD>
+                            {END TT10M24AA2TT_dtable_column}
+                            {BEGIN NTANTCD2_fieldcolumn}
+                              <TD class="{$NTANTCD2_class}" {$NTANTCD2_style} {$recordattrs}>
+                                {$NTANTCD2_value}
+                              </TD>
+                            {END NTANTCD2_fieldcolumn}
+                            {BEGIN TANTONAME_fieldcolumn}
+                              <TD class="{$TANTONAME_class}" {$TANTONAME_style} {$recordattrs}>
+                                {$TANTONAME_value}
+                              </TD>
+                            {END TANTONAME_fieldcolumn}
+                            {BEGIN TOUTTA_fieldcolumn}
+                              <TD class="{$TOUTTA_class}" {$TOUTTA_style} {$recordattrs}>
+                                <P>
+                                  {$TOUTTA_value}
+                                </P>
+                              </TD>
+                              <P>
+                                {$ZENTTA_value}
+                                <P>
+                                </P>
+                                <P>
+                                  &nbsp;
+                                </P>
+{END TOUTTA_fieldcolumn}                                {BEGIN TOURIA_fieldcolumn}
+                                  <TD class="{$TOURIA_class}" {$TOURIA_style} {$recordattrs}>
+                                    <P>
+                                      {$TOURIA_value}
+                                    </P>
+                                  </TD>
+                                  <P>
+                                    {$ZENRIA_value}
+                                    <P>
+                                    </P>
+                                    <P>
+                                      {$SAKTTR_value}
+                                    </P>
+{END TOURIA_fieldcolumn}                                    {BEGIN TOU11A_fieldcolumn}
+                                      <TD class="{$TOU11A_class}" {$TOU11A_style} {$recordattrs}>
+                                        <P>
+                                          {$TOU11A_value}
+                                        </P>
+                                      </TD>
+                                      <P>
+                                        {$ZEN11A_value}
+                                        <P>
+                                        </P>
+                                        <P>
+                                          {$SAK11R_value}
+                                        </P>
+{END TOU11A_fieldcolumn}                                        {BEGIN TOU12A_fieldcolumn}
+                                          <TD class="{$TOU12A_class}" {$TOU12A_style} {$recordattrs}>
+                                            <P>
+                                              {$TOU12A_value}
+                                            </P>
+                                          </TD>
+                                          <P>
+                                            {$ZEN12A_value}
+                                            <P>
+                                            </P>
+                                            <P>
+                                              {$SAK12R_value}
+                                            </P>
+{END TOU12A_fieldcolumn}                                            {BEGIN TOU01A_fieldcolumn}
+                                              <TD class="{$TOU01A_class}" {$TOU01A_style} {$recordattrs}>
+                                                <P>
+                                                  {$TOU01A_value}
+                                                </P>
+                                              </TD>
+                                              <P>
+                                                {$ZEN01A_value}
+                                                <P>
+                                                </P>
+                                                <P>
+                                                  {$SAK01R_value}
+                                                </P>
+{END TOU01A_fieldcolumn}                                                {BEGIN TOU02A_fieldcolumn}
+                                                  <TD class="{$TOU02A_class}" {$TOU02A_style} {$recordattrs}>
+                                                    <P>
+                                                      {$TOU02A_value}
+                                                    </P>
+                                                  </TD>
+                                                  <P>
+                                                    {$ZEN02A_value}
+                                                    <P>
+                                                    </P>
+                                                    <P>
+                                                      {$SAK02R_value}
+                                                    </P>
+{END TOU02A_fieldcolumn}                                                    {BEGIN TOU03A_fieldcolumn}
+                                                      <TD class="{$TOU03A_class}" {$TOU03A_style} {$recordattrs}>
+                                                        <P>
+                                                          {$TOU03A_value}
+                                                        </P>
+                                                      </TD>
+                                                      <P>
+                                                        {$ZEN03A_value}
+                                                        <P>
+                                                        </P>
+                                                        <P>
+                                                          {$SAK03R_value}
+                                                        </P>
+{END TOU03A_fieldcolumn}                                                        {BEGIN TOU04A_fieldcolumn}
+                                                          <TD class="{$TOU04A_class}" {$TOU04A_style} {$recordattrs}>
+                                                            <P>
+                                                              {$TOU04A_value}
+                                                            </P>
+                                                          </TD>
+                                                          <P>
+                                                            {$ZEN04A_value}
+                                                            <P>
+                                                            </P>
+                                                            <P>
+                                                              {$SAK04R_value}
+                                                            </P>
+{END TOU04A_fieldcolumn}                                                            {BEGIN TOU05A_fieldcolumn}
+                                                              <TD class="{$TOU05A_class}" {$TOU05A_style} {$recordattrs}>
+                                                                <P>
+                                                                  {$TOU05A_value}
+                                                                </P>
+                                                              </TD>
+                                                              <P>
+                                                                {$ZEN05A_value}
+                                                                <P>
+                                                                </P>
+                                                                <P>
+                                                                  {$SAK05R_value}
+                                                                </P>
+{END TOU05A_fieldcolumn}                                                                {BEGIN TOU06A_fieldcolumn}
+                                                                  <TD class="{$TOU06A_class}" {$TOU06A_style} {$recordattrs}>
+                                                                    <P>
+                                                                      {$TOU06A_value}
+                                                                    </P>
+                                                                  </TD>
+                                                                  <P>
+                                                                    {$ZEN06A_value}
+                                                                    <P>
+                                                                    </P>
+                                                                    <P>
+                                                                      {$SAK06R_value}
+                                                                    </P>
+{END TOU06A_fieldcolumn}                                                                    {BEGIN TOU07A_fieldcolumn}
+                                                                      <TD class="{$TOU07A_class}" {$TOU07A_style} {$recordattrs}>
+                                                                        <P>
+                                                                          {$TOU07A_value}
+                                                                        </P>
+                                                                      </TD>
+                                                                      <P>
+                                                                        {$ZEN07A_value}
+                                                                        <P>
+                                                                        </P>
+                                                                        <P>
+                                                                          {$SAK07R_value}
+                                                                        </P>
+{END TOU07A_fieldcolumn}                                                                        {BEGIN TOU08A_fieldcolumn}
+                                                                          <TD class="{$TOU08A_class}" {$TOU08A_style} {$recordattrs}>
+                                                                            <P>
+                                                                              {$TOU08A_value}
+                                                                            </P>
+                                                                          </TD>
+                                                                          <P>
+                                                                            {$ZEN08A_value}
+                                                                            <P>
+                                                                            </P>
+                                                                            <P>
+                                                                              {$SAK08R_value}
+                                                                            </P>
+{END TOU08A_fieldcolumn}                                                                            {BEGIN TOU09A_fieldcolumn}
+                                                                              <TD class="{$TOU09A_class}" {$TOU09A_style} {$recordattrs}>
+                                                                                <P>
+                                                                                  {$TOU09A_value}
+                                                                                </P>
+                                                                              </TD>
+                                                                              <P>
+                                                                                {$ZEN09A_value}
+                                                                                <P>
+                                                                                </P>
+                                                                                <P>
+                                                                                  {$SAK09R_value}
+                                                                                </P>
+{END TOU09A_fieldcolumn}                                                                                {BEGIN TOU10A_fieldcolumn}
+                                                                                  <TD class="{$TOU10A_class}" {$TOU10A_style} {$recordattrs}>
+                                                                                    <P>
+                                                                                      {$TOU10A_value}
+                                                                                    </P>
+                                                                                  </TD>
+                                                                                  <P>
+                                                                                    {$ZEN10A_value}
+                                                                                    <P>
+                                                                                    </P>
+                                                                                    <P>
+                                                                                      {$SAK10R_value}
+                                                                                    </P>
+{END TOU10A_fieldcolumn}                                                                                    <TD style="white-space: nowrap;" class="runner-cr" {$rowstyle}>
+                                                                                    </TD>
+                                                                                    {BEGIN endrecord_block}
+                                                                                      <TD class="rnr-cs" {$endrecordblock_attrs}>
+                                                                                      </TD>
+                                                                                    {END endrecord_block}
+                                                                                  </P>
+{END grid_record}                                                                                  </TR>
+{END grid_row}                                                                                  {BEGIN totals_row}
+                                                                                    <TR class="rnr-bottomrow style1 {$gridFooter_class}">
+                                                                                      {BEGIN totals_record}
+                                                                                        {BEGIN TT10M24AA2TT_dtable_column}
+                                                                                          <TD class="rnr-cc">
+                                                                                          </TD>
+                                                                                        {END TT10M24AA2TT_dtable_column}
+                                                                                        {BEGIN NTANTCD2_fieldfootercolumn}
+                                                                                          <TD class="{$NTANTCD2_class}">
+                                                                                          </TD>
+                                                                                        {END NTANTCD2_fieldfootercolumn}
+                                                                                        {BEGIN TANTONAME_fieldfootercolumn}
+                                                                                          <TD class="{$TANTONAME_class}">
+                                                                                          </TD>
+                                                                                          ページ計
+                                                                                          <P>
+                                                                                          </P>
+                                                                                        {END TANTONAME_fieldfootercolumn}
+                                                                                        {BEGIN TOUTTA_fieldfootercolumn}
+                                                                                          <TD class="{$TOUTTA_class}">
+                                                                                            {BEGIN TOUTTA_showtotal}
+                                                                                              <P>
+                                                                                                {$TOUTTA_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZENTTA_total}
+                                                                                              </P>
+                                                                                            {END TOUTTA_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOUTTA_fieldfootercolumn}
+                                                                                        {BEGIN TOURIA_fieldfootercolumn}
+                                                                                          <TD class="{$TOURIA_class}">
+                                                                                            {BEGIN TOURIA_showtotal}
+                                                                                              <P>
+                                                                                                {$TOURIA_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZENRIA_total}
+                                                                                              </P>
+                                                                                            {END TOURIA_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOURIA_fieldfootercolumn}
+                                                                                        {BEGIN TOU11A_fieldfootercolumn}
+                                                                                          <TD class="{$TOU11A_class}">
+                                                                                            {BEGIN TOU11A_showtotal}
+                                                                                              <P>
+                                                                                                {$TOU11A_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZEN11A_total}
+                                                                                              </P>
+                                                                                            {END TOU11A_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOU11A_fieldfootercolumn}
+                                                                                        {BEGIN TOU12A_fieldfootercolumn}
+                                                                                          <TD class="{$TOU12A_class}">
+                                                                                            {BEGIN TOU12A_showtotal}
+                                                                                              <P>
+                                                                                                {$TOU12A_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZEN12A_total}
+                                                                                              </P>
+                                                                                            {END TOU12A_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOU12A_fieldfootercolumn}
+                                                                                        {BEGIN TOU01A_fieldfootercolumn}
+                                                                                          <TD class="{$TOU01A_class}">
+                                                                                            {BEGIN TOU01A_showtotal}
+                                                                                              <P>
+                                                                                                {$TOU01A_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZEN01A_total}
+                                                                                              </P>
+                                                                                            {END TOU01A_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOU01A_fieldfootercolumn}
+                                                                                        {BEGIN TOU02A_fieldfootercolumn}
+                                                                                          <TD class="{$TOU02A_class}">
+                                                                                            {BEGIN TOU02A_showtotal}
+                                                                                              <P>
+                                                                                                {$TOU02A_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZEN02A_total}
+                                                                                              </P>
+                                                                                            {END TOU02A_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOU02A_fieldfootercolumn}
+                                                                                        {BEGIN TOU03A_fieldfootercolumn}
+                                                                                          <TD class="{$TOU03A_class}">
+                                                                                            {BEGIN TOU03A_showtotal}
+                                                                                              <P>
+                                                                                                {$TOU03A_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZEN03A_total}
+                                                                                              </P>
+                                                                                            {END TOU03A_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOU03A_fieldfootercolumn}
+                                                                                        {BEGIN TOU04A_fieldfootercolumn}
+                                                                                          <TD class="{$TOU04A_class}">
+                                                                                            {BEGIN TOU04A_showtotal}
+                                                                                              <P>
+                                                                                                {$TOU04A_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZEN04A_total}
+                                                                                              </P>
+                                                                                            {END TOU04A_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOU04A_fieldfootercolumn}
+                                                                                        {BEGIN TOU05A_fieldfootercolumn}
+                                                                                          <TD class="{$TOU05A_class}">
+                                                                                            {BEGIN TOU05A_showtotal}
+                                                                                              <P>
+                                                                                                {$TOU05A_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZEN05A_total}
+                                                                                              </P>
+                                                                                            {END TOU05A_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOU05A_fieldfootercolumn}
+                                                                                        {BEGIN TOU06A_fieldfootercolumn}
+                                                                                          <TD class="{$TOU06A_class}">
+                                                                                            {BEGIN TOU06A_showtotal}
+                                                                                              <P>
+                                                                                                {$TOU06A_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZEN06A_total}
+                                                                                              </P>
+                                                                                            {END TOU06A_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOU06A_fieldfootercolumn}
+                                                                                        {BEGIN TOU07A_fieldfootercolumn}
+                                                                                          <TD class="{$TOU07A_class}">
+                                                                                            {BEGIN TOU07A_showtotal}
+                                                                                              <P>
+                                                                                                {$TOU07A_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZEN07A_total}
+                                                                                              </P>
+                                                                                            {END TOU07A_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOU07A_fieldfootercolumn}
+                                                                                        {BEGIN TOU08A_fieldfootercolumn}
+                                                                                          <TD class="{$TOU08A_class}">
+                                                                                            {BEGIN TOU08A_showtotal}
+                                                                                              <P>
+                                                                                                {$TOU08A_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZEN08A_total}
+                                                                                              </P>
+                                                                                            {END TOU08A_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOU08A_fieldfootercolumn}
+                                                                                        {BEGIN TOU09A_fieldfootercolumn}
+                                                                                          <TD class="{$TOU09A_class}">
+                                                                                            {BEGIN TOU09A_showtotal}
+                                                                                              <P>
+                                                                                                {$TOU09A_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZEN09A_total}
+                                                                                              </P>
+                                                                                            {END TOU09A_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOU09A_fieldfootercolumn}
+                                                                                        {BEGIN TOU10A_fieldfootercolumn}
+                                                                                          <TD class="{$TOU10A_class}">
+                                                                                            {BEGIN TOU10A_showtotal}
+                                                                                              <P>
+                                                                                                {$TOU10A_total}
+                                                                                              </P>
+                                                                                              <P>
+                                                                                                {$ZEN10A_total}
+                                                                                              </P>
+                                                                                            {END TOU10A_showtotal}
+                                                                                          </TD>
+                                                                                        {END TOU10A_fieldfootercolumn}
+                                                                                        <TD style="white-space: nowrap;" class="runner-cr">
+                                                                                        </TD>
+                                                                                        {BEGIN endrecordtotals_block}
+                                                                                          <TD class="rnr-cs">
+                                                                                          </TD>
+                                                                                        {END endrecordtotals_block}
+                                                                                      {END totals_record}
+                                                                                    </TR>
+                                                                                  {END totals_row}
+                                                                                  </TBODY>
+                                                                                  </TABLE>
+{END grid_block}{END container_grid}                                                                                  {BEGIN container_pagination}
+                                                                                    <DIV class="rnr-c rnr-ch rnr-c-pagination">
+                                                                                      {BEGIN pagination_block}
+                                                                                        <DIV class="style1 rnr-bc rnr-b-pagination" {$brickclass_pagination}>
+                                                                                          {$pagination}
+                                                                                        </DIV>
+                                                                                      {END pagination_block}
+                                                                                    </DIV>
+                                                                                  {END container_pagination}
+                                                                                  </DIV>
+                                                                                  <DIV class="rnr-right {$blockclass_right}">
+                                                                                  </DIV>
+                                                                                  </DIV>
+                                                                                  <DIV class="rnr-bottom {$blockclass_bottom}">
+                                                                                    <!--%%bottom%%-->
+                                                                                  </DIV>
+                                                                                  </DIV>
+                                                                                  {$footer}
+                                                                                  </DIV>
+{END body}                                                                                  </BODY>
+                                                                                  </HTML>
